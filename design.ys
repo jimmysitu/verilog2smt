@@ -1,0 +1,11 @@
+read_verilog counter.v
+prep -top counter
+
+opt_clean
+setundef -zero
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang design.il
+write_smt2  design.smt2
+
