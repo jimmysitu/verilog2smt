@@ -1,4 +1,4 @@
-read_verilog counter.v
+read_verilog -formal counter.v
 prep -top counter
 
 opt_clean
@@ -7,5 +7,5 @@ opt -keepdc -fast
 check
 hierarchy -simcheck
 write_ilang design.il
-write_smt2  design.smt2
+write_smt2  -wires -stbv design.smt2
 
